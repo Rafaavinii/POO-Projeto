@@ -1,20 +1,20 @@
 # POO-Projeto
 
-<h2>Alunos: </h2>
+## Alunos:
 
-Rafael Vinicius Sousa
+Rafael Vinicius Sousa <br>
 Antonio Humberto Passos
 
-<h2>Funcionalidades Básicas: </h2>
+## Funcionalidades Básicas:
 
-• Cadastrar vendas
-• Cadastrar vendas sem os dados do(a) cliente
-• Aumentar a quantidade de produtos no estoque
-• Cadastrar/excluir um(a) cliente
-• Listar os(as) clientes cadastrados e excluídos
-• Listar todas as vendas
-• Listar compras de um(a) determinado(a) cliente
-• Listar produtos por categorias (Categoria de produtos é uma exigência do projeto)
-• Listar produtos excluídos ou fora do estoque
-• Listar todos os produtos cadastrados
+• Cadastrar vendas <br>
+• Cadastrar vendas sem os dados do(a) cliente <br>
+• Aumentar a quantidade de produtos no estoque <br>
+• Cadastrar/excluir um(a) cliente <br>
+• Listar os(as) clientes cadastrados e excluídos <br>
+• Listar todas as vendas <br>
+• Listar compras de um(a) determinado(a) cliente <br>
+• Listar produtos por categorias (Categoria de produtos é uma exigência do projeto) <br>
+• Listar produtos excluídos ou fora do estoque <br>
+• Listar todos os produtos cadastrados <br>
 • Listar os produtos disponíveis no estoque
