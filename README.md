@@ -1,4 +1,4 @@
-# POO-Projeto
+# Loja De Artigos Esportivos
 
 ## Alunos:
 
