@@ -18,3 +18,9 @@ Antonio Humberto Passos
 • Listar produtos excluídos ou fora do estoque <br>
 • Listar todos os produtos cadastrados <br>
 • Listar os produtos disponíveis no estoque
+
+## Divisão das tarefas
+
+### Semana 1
+
+Divisão das categorias 
