@@ -24,3 +24,8 @@ Antonio Humberto Passos
 ### Semana 1
 
 Divisão das categorias 
+
+### Semana 2
+
+Craição da interface gráfica
+
