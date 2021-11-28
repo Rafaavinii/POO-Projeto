@@ -153,8 +153,8 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
     private void cadastroProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroProdutosActionPerformed
         this.setVisible(false);
-        new JanelaCadastroProdutos().setVisible(true);
-        new JanelaCadastroProdutos().dispose();
+        new JanelaCadastroProduto().setVisible(true);
+        new JanelaCadastroProduto().dispose();
     }//GEN-LAST:event_cadastroProdutosActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed

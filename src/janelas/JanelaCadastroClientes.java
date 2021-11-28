@@ -32,6 +32,7 @@ public class JanelaCadastroClientes extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
+        buttonGroup3 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jtfNome = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -58,7 +59,6 @@ public class JanelaCadastroClientes extends javax.swing.JFrame {
 
         jLabel2.setText("NOME");
 
-        jtfCPF.setText("Digite seu cpf");
         jtfCPF.setToolTipText("");
         jtfCPF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,10 +157,6 @@ public class JanelaCadastroClientes extends javax.swing.JFrame {
     private void jtfCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfCPFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtfCPFActionPerformed
-
-    private void jrMaculinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrMaculinoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jrMaculinoActionPerformed
     int id = 1;
     private void btnCadastroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroClienteActionPerformed
 
@@ -183,6 +179,10 @@ public class JanelaCadastroClientes extends javax.swing.JFrame {
         new JanelaPrincipal().setVisible(true);
         new JanelaPrincipal().dispose();
     }//GEN-LAST:event_btnVoltarActionPerformed
+
+    private void jrMaculinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrMaculinoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jrMaculinoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -224,6 +224,7 @@ public class JanelaCadastroClientes extends javax.swing.JFrame {
     private javax.swing.JButton btnVoltar;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
