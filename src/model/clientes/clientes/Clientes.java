@@ -60,11 +60,23 @@ public class Clientes {
         return getNome() + "\n" + getCpf();
     }
 
-    public void listarCompras(){}
+    public void listarCompras(){    //ant
+        for(int i = 0; i < this.qtdCompras; i++){
+            carrinhoCompras[i].infoProduto();
+            System.out.println();
+        }
+    }   
 
     public void addCarrinho(Produto produto){   //ant
-        this.carrinhoCompras[this.qtdCompras] = produto;
-        this.qtdCompras++;
+        if(produto.quantidadeEstoque <= 0){
+            System.out.println("Produto fora de estoque!");
+        }
+        else{
+            this.carrinhoCompras[this.qtdCompras] = produto;
+            this.qtdCompras++;
+            produto.quantidadeEstoque--;
+        }
+        
     }
     
     public float fazerCompra(){ //ant
