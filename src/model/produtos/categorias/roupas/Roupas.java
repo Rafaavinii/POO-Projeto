@@ -33,7 +33,7 @@ public class Roupas extends Produto{
 	}
 
     public String salvarRoupa(){
-        return ""+ this.nome +"\n"+ this.preco +"\n"+ this.marca +"\n"+ this.genero+"\n"+ this.tipo+"\n"+this.quantidadeEstoque+"";
+        return ""+ this.nome +"\n"+ this.preco +"\n"+ this.marca +"\n"+ this.genero+"\n"+ this.quantidadeEstoque+ "\n" + this.tipo+"\n";
     }
 	
 }

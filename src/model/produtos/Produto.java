@@ -37,4 +37,7 @@ public abstract class Produto {
 	public void setQuantidadeEstoque(int quantidadeEstoque) {
 		this.quantidadeEstoque = quantidadeEstoque;
 	}
+	public String infoProduto(){ //ant
+		return this.nome + "/nPreco: "+ this.preco + "/nEm estoque: "+ this.quantidadeEstoque;
+	}
 }

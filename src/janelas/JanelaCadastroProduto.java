@@ -38,7 +38,12 @@ public class JanelaCadastroProduto extends javax.swing.JFrame {
         jLabel1.setText("Categoria");
 
         jcbCategoria.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        jcbCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Roupas", "Equipamentos", "Calçados" }));
+        jcbCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Roupas", "Equipamentos", "Calcados" }));
+        jcbCategoria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbCategoriaActionPerformed(evt);
+            }
+        });
 
         btnVoltar.setText("VOLTAR");
         btnVoltar.addActionListener(new java.awt.event.ActionListener() {
@@ -106,7 +111,16 @@ public class JanelaCadastroProduto extends javax.swing.JFrame {
             new JanelaCadastroEquipamento().setVisible(true);
             new JanelaCadastroEquipamento().dispose();
         }
+        else if(categoria == "Calcados"){
+            this.setVisible(false);
+            new JanelaCadastroCalcado().setVisible(true);
+            new JanelaCadastroCalcado().dispose();            
+        }
     }//GEN-LAST:event_btnAvancarActionPerformed
+
+    private void jcbCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbCategoriaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jcbCategoriaActionPerformed
 
     /**
      * @param args the command line arguments

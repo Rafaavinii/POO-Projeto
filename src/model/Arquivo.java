@@ -70,7 +70,7 @@ public class Arquivo {
         }
     }
     
-    public int contarArquivos(String caminho){
+    public static int contarArquivos(String caminho){
         File f = new File(caminho);
 
         File[] files = f.listFiles(new FileFilter() {
@@ -81,5 +81,12 @@ public class Arquivo {
         });
         
         return files.length;
+    }
+
+    public static String[] mostrarAqrquivos(String caminho) {
+        File file = new File(caminho);
+        String[] nomes = file.list();
+  
+        return nomes;
     }
 }

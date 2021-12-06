@@ -1,0 +1,7 @@
+Sapato
+50.0
+slim
+coca
+5
+
+Masculino

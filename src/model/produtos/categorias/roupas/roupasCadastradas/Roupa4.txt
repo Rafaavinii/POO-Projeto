@@ -1,6 +1,7 @@
-Short
-60.0
-Adidas
+Bermuda
+70.0
+Nike
 Maculino
-Adulto
-5
+3
+Moletom
+

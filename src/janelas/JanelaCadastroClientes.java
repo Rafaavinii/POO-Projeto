@@ -6,6 +6,8 @@
 package janelas;
 
 import javax.swing.JOptionPane;
+
+import controller.ControllerClientes;
 import model.clientes.Clientes;
 import model.Arquivo;
 /**
@@ -38,9 +40,6 @@ public class JanelaCadastroClientes extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jtfCPF = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jrMaculino = new javax.swing.JRadioButton();
-        jrFeminino = new javax.swing.JRadioButton();
         btnCadastroCliente = new javax.swing.JButton();
         btnVoltar = new javax.swing.JButton();
 
@@ -67,17 +66,6 @@ public class JanelaCadastroClientes extends javax.swing.JFrame {
         });
 
         jLabel3.setText("CPF");
-
-        jLabel4.setText("SEXO");
-
-        jrMaculino.setText("MASCULINO");
-        jrMaculino.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jrMaculinoActionPerformed(evt);
-            }
-        });
-
-        jrFeminino.setText("FEMININO");
 
         btnCadastroCliente.setText("CADASTRAR");
         btnCadastroCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -110,14 +98,7 @@ public class JanelaCadastroClientes extends javax.swing.JFrame {
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jtfNome, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(btnCadastroCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jrMaculino)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jrFeminino)))
+                    .addComponent(btnCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -134,14 +115,9 @@ public class JanelaCadastroClientes extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtfCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jrMaculino)
-                    .addComponent(jrFeminino))
-                .addGap(18, 18, 18)
+                .addGap(41, 41, 41)
                 .addComponent(btnCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -160,16 +136,22 @@ public class JanelaCadastroClientes extends javax.swing.JFrame {
     int id = 1;
     private void btnCadastroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroClienteActionPerformed
 
-        Clientes cliente = new Clientes(jtfNome.getText(), jtfCPF.getText(), ' ');
-        Arquivo arquivo = new Arquivo();
-        
-        if(arquivo.Write(".\\src\\model\\clientes\\clientesCadastrados\\Cliente" + id + ".txt", cliente.salvarCliente())){
-            System.out.println("Arquivo salvo com sucesso");
-            id++;
-            JOptionPane.showMessageDialog(null, "Cliente Cadastrado com sucesso!");
+        if(jtfNome.getText().isEmpty() || jtfCPF.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Nome ou CPF nao digitado");
+        }else{
+            Clientes cliente = new Clientes(jtfNome.getText(), jtfCPF.getText());
+            String caminho = ".\\src\\model\\clientes\\clientesCadastrados\\Cliente";
+            ControllerClientes clientes = new ControllerClientes();
+            if(clientes.validarCPF(cliente.getCpf(), ".\\src\\model\\clientes\\clientesCadastrados")){
+                clientes.cadastrar(caminho, id, cliente);
+                id++;
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "CPF ja cadastrado!");
+            }
+
         }
-        else
-            System.out.println("Erro ao salvar");
+
 
         
     }//GEN-LAST:event_btnCadastroClienteActionPerformed
@@ -179,10 +161,6 @@ public class JanelaCadastroClientes extends javax.swing.JFrame {
         new JanelaPrincipal().setVisible(true);
         new JanelaPrincipal().dispose();
     }//GEN-LAST:event_btnVoltarActionPerformed
-
-    private void jrMaculinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrMaculinoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jrMaculinoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -228,9 +206,6 @@ public class JanelaCadastroClientes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JRadioButton jrFeminino;
-    private javax.swing.JRadioButton jrMaculino;
     private javax.swing.JTextField jtfCPF;
     private javax.swing.JTextField jtfNome;
     // End of variables declaration//GEN-END:variables

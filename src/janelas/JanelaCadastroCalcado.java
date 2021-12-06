@@ -1,11 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package janelas;
 
+import javax.swing.JOptionPane;
+
 import model.Arquivo;
+import model.produtos.categorias.calcados.*;
 
 /**
  *
@@ -38,13 +36,13 @@ public class JanelaCadastroCalcado extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jsQuantidade = new javax.swing.JSpinner();
         jLabel8 = new javax.swing.JLabel();
-        jtfMarca = new javax.swing.JTextField();
+        jtfTipo = new javax.swing.JTextField();
         jtfDepartamento = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jcbGenero = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,9 +75,9 @@ public class JanelaCadastroCalcado extends javax.swing.JFrame {
 
         jLabel8.setText("Departamento");
 
-        jtfMarca.addActionListener(new java.awt.event.ActionListener() {
+        jtfTipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtfMarcaActionPerformed(evt);
+                jtfTipoActionPerformed(evt);
             }
         });
 
@@ -97,10 +95,10 @@ public class JanelaCadastroCalcado extends javax.swing.JFrame {
 
         jLabel3.setText("Preço");
 
-        jLabel7.setText("jLabel7");
+        jLabel7.setText("Genero");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Feminino" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        jcbGenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Feminino" }));
+        jcbGenero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
             }
@@ -127,19 +125,19 @@ public class JanelaCadastroCalcado extends javax.swing.JFrame {
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jtfMarca))
+                                    .addComponent(jtfTipo))
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(jsQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jtfDepartamento, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addGap(18, 18, 18)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jcbGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnVoltar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -173,7 +171,7 @@ public class JanelaCadastroCalcado extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtfMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtfTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -181,7 +179,7 @@ public class JanelaCadastroCalcado extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jcbGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -203,17 +201,18 @@ public class JanelaCadastroCalcado extends javax.swing.JFrame {
         new JanelaPrincipal().setVisible(true);
         new JanelaPrincipal().dispose();
     }//GEN-LAST:event_btnVoltarActionPerformed
-
+    int id = 1;
     private void btncadastroProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncadastroProdutoActionPerformed
-        Equipamentos equipamentos = new Equipamentos();;
-        equipamentos.setNome(jtfNomeProduto.getText());
-        equipamentos.setPreco(Float.valueOf(jtfPrecoProduto.getText()));
-        equipamentos.setMarca(jtfMarca.getText());
-        equipamentos.setDepartamento(jtfTipo.getText());
-        equipamentos.setQuantidadeEstoque((int) jsQuantidade.getValue());
+        Calcados calcados = new Calcados();;
+        calcados.setNome(jtfNomeProduto.getText());
+        calcados.setPreco(Float.valueOf(jtfPrecoProduto.getText()));
+        calcados.setTipo(jtfTipo.getText());
+        calcados.setDepartamento(jtfDepartamento.getText());
+        calcados.setGenero((String) jcbGenero.getSelectedItem());
+        calcados.setQuantidadeEstoque((int) jsQuantidade.getValue());
 
         Arquivo arquivo = new Arquivo();
-        if(arquivo.Write(".\\src\\model\\produtos\\categorias\\equipamentos\\equipamentosCadastrados\\Equipamento" + id + ".txt", equipamentos.salvarEquipamento())){
+        if(arquivo.Write(".\\src\\model\\produtos\\categorias\\calcados\\calcadosCadastrados\\Calcado" + id + ".txt", calcados.salvarCalcado())){
             System.out.println("Arquivo salvo com sucesso");
             id++;
             JOptionPane.showMessageDialog(null, "Produto cadastrado com sucesso!");
@@ -222,9 +221,9 @@ public class JanelaCadastroCalcado extends javax.swing.JFrame {
         System.out.println("Erro ao salvar");
     }//GEN-LAST:event_btncadastroProdutoActionPerformed
 
-    private void jtfMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfMarcaActionPerformed
+    private void jtfTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfTipoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jtfMarcaActionPerformed
+    }//GEN-LAST:event_jtfTipoActionPerformed
 
     private void jtfDepartamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfDepartamentoActionPerformed
         // TODO add your handling code here:
@@ -272,7 +271,6 @@ public class JanelaCadastroCalcado extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnVoltar;
     private javax.swing.JButton btncadastroProduto;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -281,10 +279,11 @@ public class JanelaCadastroCalcado extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JComboBox<String> jcbGenero;
     private javax.swing.JSpinner jsQuantidade;
     private javax.swing.JTextField jtfDepartamento;
-    private javax.swing.JTextField jtfMarca;
     private javax.swing.JTextField jtfNomeProduto;
     private javax.swing.JTextField jtfPrecoProduto;
+    private javax.swing.JTextField jtfTipo;
     // End of variables declaration//GEN-END:variables
 }

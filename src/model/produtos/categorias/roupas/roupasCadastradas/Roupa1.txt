@@ -1,6 +1,7 @@
 Camisa
 50.0
-Nike
+Adidas
 Maculino
-infantil
-5
+2
+Adulto
+
