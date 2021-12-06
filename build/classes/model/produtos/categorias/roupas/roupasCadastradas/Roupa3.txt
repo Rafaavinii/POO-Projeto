@@ -1,6 +1,7 @@
-Ragata
-60.0
-Adidas
+calca
+50.0
+Nike
 Maculino
-Adulto
-5
+3
+Moletom
+

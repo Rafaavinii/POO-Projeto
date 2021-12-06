@@ -1,6 +1,7 @@
-Calça
+Camisa de time
 50.0
 Adidas
-Feminino
-Moletom
-5
+Maculino
+0
+Adulto
+
